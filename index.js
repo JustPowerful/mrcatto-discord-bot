@@ -28,7 +28,7 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     
- // funny random words
+ // chat responding
   
     if(message.content === `no u`){
       message.channel.send("https://images3.memedroid.com/images/UPLOADED731/5ab1fd5adac97.jpeg");
