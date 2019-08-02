@@ -1,2 +1,1 @@
-# 101010101
-01010101010
+# MrCatto Discord Bot
