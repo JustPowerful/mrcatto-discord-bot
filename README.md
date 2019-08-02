@@ -14,3 +14,6 @@
 - Server info / Bot info
 - Clear message history
 - Responds to some messages
+
+### wonder who's the cat in the photo ?
+i called her Java :")))
