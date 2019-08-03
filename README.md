@@ -1,7 +1,6 @@
 # MrCatto Discord Bot <a href="https://heroku.com/deploy?template=https://github.com/JustPowerful/mrcatto-discord-bot/" rel="nofollow"><img src="https://camo.githubusercontent.com/c0824806f5221ebb7d25e559568582dd39dd1170/68747470733a2f2f7777772e6865726f6b7563646e2e636f6d2f6465706c6f792f627574746f6e2e706e67" alt="Deploy to Heroku" data-canonical-src="https://www.herokucdn.com/deploy/button.png" style="max-width: 100%;"></a>
 
-<a href="https://mentormate.com/blog/what-is-heroku-used-for-cloud-development/"><img src="https://img.shields.io/badge/why-heroku%20%3F-green" ></a> <img src="https://img.shields.io/node/v/discord.js"> <img src="https://img.shields.io/github/followers/JustPowerful?style=social"> <img src="https://img.shields.io/github/forks/JustPowerful/mrcatto-discord-bot?style=social"> <img src="https://img.shields.io/github/stars/JustPowerful/mrcatto-discord-bot?style=social">
-
+<a href="https://mentormate.com/blog/what-is-heroku-used-for-cloud-development/"><img src="https://img.shields.io/badge/why-heroku%20%3F-green" ></a> <img src="https://img.shields.io/node/v/discord.js"> 
 <img src="http://www.mediafire.com/convkey/1ea7/vjm37wiitvwraefzg.jpg">
 
 ### How to use ?
