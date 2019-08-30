@@ -18,3 +18,6 @@
 
 ### wonder who's the cat in the photo ?
 i called her Java :")))
+
+## Authors :
+- JustPowerful
