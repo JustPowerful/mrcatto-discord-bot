@@ -174,7 +174,7 @@ bot.on("message", async message => {
         let verificationLevel = message.guild.verificationLevel;
         let verificationLevels = ['None', 'Low', 'Medium', 'High', 'Extreme']
         let serverembed = new Discord.RichEmbed()
-        .setDescription("Server Inforamtions // Mr T-NERD Bot.")
+        .setDescription(`Server Inforamtions // ${bot.user.tag}.`)
         .setColor("RANDOM")
         .addField(":punch: Server name :punch:", message.guild.name)
         .addField(":id: server ID :id:", `${message.guild.id}`, true)
@@ -198,13 +198,13 @@ bot.on("message", async message => {
 
         let bicon = bot.user.displayAvatarURL;
         let botembed = new Discord.RichEmbed()
-        .setDescription("Mr T-NERD Administration bot !")
+        .setDescription(`${bot.user.tag} bot info :`)
         .setThumbnail(bicon)
         .setColor("#RANDOM")
         .addField(":robot: Name :robot: :", bot.user.username)
         .addField(":date: Creation date :date: :",`The bot was created on **${botconfig.Date_Name[bot.user.createdAt.toString().split(" ")[1]]}** **${bot.user.createdAt.toString().split(" ")[2]}**, **${bot.user.createdAt.toString().split(" ")[3]}**!`,false)
         .addField(":electric_plug: Online On :electric_plug: :", ` ~ ${bot.guilds.size} ~ servers .`)
-        .addField(":bust_in_silhouette: Created by :bust_in_silhouette: :", ` TuniNerds Devs `)
+        .addField(":bust_in_silhouette: Created by :bust_in_silhouette: :", ` JustPowerful `)
         .setFooter(`user id ${message.author.id} requested this command !`, message.author.displayAvatarURL);
 
         return message.channel.send(botembed);
@@ -216,7 +216,7 @@ bot.on("message", async message => {
       let bicon_list = bot.user.displayAvatarURL;
       let serversembed = new Discord.RichEmbed()
       .setThumbnail(bicon_list)
-      .setDescription("Mr T-NERD Bot Servers list !")
+      .setDescription(`${bot.user.tag} servers list :`)
       .addField("Servers List :", servers_list)
       .setColor("RANDOM")
       .setFooter(`user id ${message.author.id} requested this command !`, message.author.displayAvatarURL);
@@ -252,7 +252,7 @@ bot.on("message", async message => {
 
         let bothelpmsg = "Commands sent in a private DM :smiley: "
         let botembed = new Discord.RichEmbed()
-        .setDescription("Mr T-NERD Administration bot // help commands // prefix = .")
+        .setDescription(`${bot.user.tag} bot // help commands // command prefix is ${prefix}`)
         .setColor("RANDOM")
         .addField("botinfo", `Members : get more informations about the bot .`)
         .addField("serverinfo", `Members : get more infomations about the server .`)
@@ -271,6 +271,5 @@ bot.on("message", async message => {
     }
     
 })
-
 
 bot.login(process.env.BOT_TOKEN);
