@@ -102,5 +102,4 @@ bot.on("message", async message => {
     
 })
 
-// bot.login(process.env.BOT_TOKEN);
-bot.login("NzAzNzExMDc2Mzk4NzkyNzE0.XqSkDw.p1m48AZiJyG23NNI8Z_O_W80rpQ");
+bot.login(process.env.BOT_TOKEN);
