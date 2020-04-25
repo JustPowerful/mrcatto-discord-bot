@@ -9,7 +9,9 @@
   "author": "ned",
   "license": "ISC",
   "dependencies": {
+    "ascii-table": "0.0.9",
     "discord.js": "^11.6.4",
+    "fs": "0.0.1-security",
     "ms": "^2.1.1"
   }
 }
