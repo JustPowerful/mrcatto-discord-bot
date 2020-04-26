@@ -3,6 +3,8 @@ const botconfig = require("../botconfig.json");
 const ms = require("ms");
 
 
+let prefix = botconfig.prefix;
+
 module.exports.run = async (bot, message, args) => {
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -20,5 +22,8 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "botinfo", // you can you this as the original command
-    aliases: [] // or you can do it with multiple commands (try to type it with prefix)
+    aliases: ["binfo"], // or you can do it with multiple commands (try to type it with prefix)
+    usage: `${prefix}botinfo`,
+    description: "Show bot informations",
+    accessableby: "Members"
 }

@@ -8,7 +8,7 @@ const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
- bot.user.setStatus("") //online, idle, dnd, invisible
+bot.user.setStatus("") //online, idle, dnd, invisible
 })
 setInterval(async function() {
 
@@ -65,7 +65,7 @@ bot.on("message", async message => {
 
     
 
- // chat responding
+// chat responding
   
     if(message.content === `no u`){
       message.channel.send("https://images3.memedroid.com/images/UPLOADED731/5ab1fd5adac97.jpeg");
@@ -75,30 +75,6 @@ bot.on("message", async message => {
       message.channel.send("frrrenchhh :flag_fr: ");
     }
     
-
-
-    ///Bot help command
-    if(cmd === `${prefix}help`){
-
-        let bothelpmsg = "Commands sent in a private DM :smiley: "
-        let botembed = new Discord.RichEmbed()
-        .setDescription(`${bot.user.tag} bot // help commands // command prefix is ${prefix}`)
-        .setColor("RANDOM")
-        .addField("botinfo", `Members : get more informations about the bot .`)
-        .addField("serverinfo", `Members : get more infomations about the server .`)
-        .addField("serverslist", `Members : show servers that are connected to this bot . `)
-        .addField("clear <amount>", `Admins : clear a selected amount of messages .`)
-        .addField("ban @member <reason>", `Admins : ban members , you need to create a log channel named "bans" `)
-        .addField("kick @member <reason>", `Admins : kick members , you need to create a log channel named "kicks" `)
-        .addField("report @member <reason>", `Members : you can report members for breaking the rules ! you need to create a log channel named "reports" `)
-        .addField("say <message>", `Admins : make the bot say what you want .`)
-        .addField("meme", `Members : make the bot say some random memes .`)
-        .setFooter(`user id ${message.author.id} requested this command !`, message.author.displayAvatarURL);
-          
-      
-
-        return message.member.send(botembed), message.channel.send(bothelpmsg);
-    }
     
 })
 

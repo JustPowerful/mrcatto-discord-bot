@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json");
 const ms = require("ms");
 
+let prefix = botconfig.prefix;
 
 module.exports.run = async (bot, message, args) => {
     var answers = [
@@ -36,5 +37,8 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "meme", // you can you this as the original command
-    aliases: [] // or you can do it with multiple commands (try to type it with prefix)
+    aliases: ["dankmemes"], // or you can do it with multiple commands (try to type it with prefix)
+    usage: `${prefix}meme`,
+    description: "Random memes",
+    accessableby: "Members"
 }

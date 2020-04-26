@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json");
 const ms = require("ms");
 
+let prefix = botconfig.prefix;
 
 module.exports.run = async (bot, message, args) => {
     let clear_message = `Oofed ${args[0]} messages :yum: .`;
@@ -21,5 +22,8 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "clear", // you can you this as the original command
-    aliases: [] // or you can do it with multiple commands (try to type it with prefix)
+    aliases: ["clrmsg"], // or you can do it with multiple commands (try to type it with prefix)
+    usage: `${prefix}clear <amount>`,
+    description: "clear multiple lines of messages",
+    accessableby: "Admins"
 }

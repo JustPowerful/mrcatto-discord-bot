@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../botconfig.json");
 const ms = require("ms");
 
+let prefix = botconfig.prefix;
 
 module.exports.run = async (bot, message, args) => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -30,5 +31,8 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     name: "ban", // you can you this as the original command
-    aliases: [] // or you can do it with multiple commands (try to type it with prefix)
+    aliases: [], // or you can do it with multiple commands (try to type it with prefix)
+    usage: `${prefix}ban <member> <reason>`,
+    description: "Ban a member",
+    accessableby: "Admins"
 }
