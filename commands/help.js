@@ -8,6 +8,8 @@ module.exports.run = async (bot, message, args) => {
 
     
     let botname = bot.user.tag;
+    let error = null;
+
 
     if(args[0] == "help") return message.channel.send(`Just do ${prefix}help instead.`)
 
@@ -25,11 +27,7 @@ module.exports.run = async (bot, message, args) => {
 
     if(!args[0]) {
         message.delete();
-        let embed = new Discord.RichEmbed()
-        .setAuthor(`Help Command!`, message.guild.iconURL)
-        .setColor("RANDOM")
-        .setDescription(`${message.author.username} check your dms!`)
-
+        let bothelpmsg = "Commands sent in a private DM :smiley:"
         let Sembed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`${botname} Help`, message.guild.iconURL)
@@ -37,9 +35,23 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
         .setDescription(`These are the avaliable commands for ${botname}!\nBot prefix is: ${prefix}`)
         .addField(`Commands:`, "``say`` ``clear`` ``meme`` ``help`` ``serverinfo`` ``botinfo`` ``kick`` ``ban`` ``report``")
-        .setFooter("Test Bot 2k18", bot.user.displayAvatarURL)
-        message.channel.send(embed).then(m => m.delete(10000));
-        message.author.send(Sembed)
+        .setFooter("BETA V1.0.3", bot.user.displayAvatarURL)
+        
+        
+        message.channel.send(bothelpmsg);
+        // if the bot can't send the message to the user
+        // that means that the user disable direct messages from server members
+        
+        message.member.send(Sembed).catch(err => {
+            if(err){
+                message.channel.send("[Error]: Please enable direct messages from server members .");
+            }
+        });
+        
+        
+        
+            
+        
     }
 }
 
