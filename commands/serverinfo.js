@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let verificationLevel = message.guild.verificationLevel;
     let verificationLevels = ['None', 'Low', 'Medium', 'High', 'Extreme']
     let serverembed = new Discord.RichEmbed()
-    .setDescription(`Server Inforamtions // ${bot.user.tag}.`)
+    .setDescription(`Server Inforamtions // ${bot.user.username}.`)
     .setColor("RANDOM")
     .addField(":punch: Server name :punch:", message.guild.name)
     .addField(":id: server ID :id:", `${message.guild.id}`, true)

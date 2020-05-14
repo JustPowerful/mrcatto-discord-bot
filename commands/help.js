@@ -7,7 +7,6 @@ let prefix = botconfig.prefix;
 module.exports.run = async (bot, message, args) => {
 
     
-    let botname = bot.user.tag;
     let error = null;
 
 
@@ -19,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
             command = bot.commands.get(command);
             var SHembed = new Discord.RichEmbed()
             .setColor("RANDOM")
-            .setAuthor(`${botname} HELP`, message.guild.iconURL)
+            .setAuthor(`${bot.user.username} HELP`, message.guild.iconURL)
             .setThumbnail(bot.user.displayAvatarURL)
             .setDescription(`The bot prefix is: ${prefix}\n\n**Command:** ${command.config.name}\n**Description:** ${command.config.description || "No Description"}\n**Usage:** ${command.config.usage || "No Usage"}\n**Accessable by:** ${command.config.accessableby || "Members"}\n**Aliases:** ${command.config.noalias || command.config.aliases}`)
             message.channel.send(SHembed);
@@ -30,10 +29,10 @@ module.exports.run = async (bot, message, args) => {
         let bothelpmsg = "Commands sent in a private DM :smiley:"
         let Sembed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setAuthor(`${botname} Help`, message.guild.iconURL)
+        .setAuthor(`${bot.user.username} Help`, message.guild.iconURL)
         .setThumbnail(bot.user.displayAvatarURL)
         .setTimestamp()
-        .setDescription(`These are the avaliable commands for ${botname}!\nBot prefix is: ${prefix}`)
+        .setDescription(`These are the avaliable commands for ${bot.user.username}!\nBot prefix is: ${prefix}`)
         .addField(`Commands:`, "``say`` ``clear`` ``meme`` ``help`` ``serverinfo`` ``botinfo`` ``kick`` ``ban`` ``report``")
         .setFooter("BETA V1.0.3", bot.user.displayAvatarURL)
         

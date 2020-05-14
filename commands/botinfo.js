@@ -8,7 +8,7 @@ let prefix = botconfig.prefix;
 module.exports.run = async (bot, message, args) => {
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setDescription(`${bot.user.tag} bot info :`)
+    .setDescription(`${bot.user.username} bot info :`)
     .setThumbnail(bicon)
     .setColor("#RANDOM")
     .addField(":robot: Name :robot: :", bot.user.username)
