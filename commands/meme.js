@@ -34,21 +34,36 @@ module.exports.run = async (bot, message, args) => {
 
     let msg = await message.channel.send("Generating...")
 
-    fetch("https://apis.duncte123.me/meme")
-    .then(res => res.json()).then(body => {
-        if(!body) return message.reply("whoops! I've broke, try again!")
+//     fetch("https://apis.duncte123.me/meme")
+//     .then(res => res.json()).then(body => {
+//         if(!body) return message.reply("whoops! I've broke, try again!")
 
-        let mEmbed = new Discord.RichEmbed()
+//         let mEmbed = new Discord.RichEmbed()
+//         .setColor("RANDOM")
+//         .setAuthor(`${bot.user.username} MEMES!`, message.guild.iconURL)
+//         .setImage(body.data.image)
+//         .setTimestamp()
+//         .setFooter(bot.user.username.toUpperCase(), bot.user.displayAvatarURL);
+
+
+//             message.channel.send(mEmbed);
+//             msg.delete();
+//     });
+    
+    fetch('https://apis.duncte123.me/meme')
+    .then(response => response.json())
+    .then(data => {
+         let mEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`${bot.user.username} MEMES!`, message.guild.iconURL)
-        .setImage(body.data.image)
+        .setImage(data.data.image)
         .setTimestamp()
         .setFooter(bot.user.username.toUpperCase(), bot.user.displayAvatarURL);
 
 
             message.channel.send(mEmbed);
             msg.delete();
-    });
+    })
         
 }
 
