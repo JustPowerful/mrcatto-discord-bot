@@ -53,6 +53,7 @@ module.exports.run = async (bot, message, args) => {
     fetch('https://apis.duncte123.me/meme')
     .then(response => response.json())
     .then(data => {
+        console.log(data)
          let mEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`${bot.user.username} MEMES!`, message.guild.iconURL)
