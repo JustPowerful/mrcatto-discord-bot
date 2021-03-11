@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
         .setThumbnail(bot.user.displayAvatarURL)
         .setTimestamp()
         .setDescription(`These are the avaliable commands for ${bot.user.username}!\nBot prefix is: ${prefix}`)
-        .addField(`Commands:`, "``say`` ``clear`` ``meme`` ``help`` ``serverinfo`` ``botinfo`` ``kick`` ``ban`` ``report``")
+        .addField(`Commands:`, "``say`` ``clear`` ``meme`` ``help`` ``serverinfo`` ``botinfo`` ``kick`` ``ban`` ``report`` ``emoji``")
         .setFooter("BETA V1.0.3", bot.user.displayAvatarURL)
         
         
