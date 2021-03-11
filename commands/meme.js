@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
 //     });
     
     fetch('https://apis.duncte123.me/meme')
-    .then(response => response.json())
+    .then(response => response.text())
     .then(data => {
         console.log(data)
          let mEmbed = new Discord.RichEmbed()
