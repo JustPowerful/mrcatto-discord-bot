@@ -50,7 +50,11 @@ module.exports.run = async (bot, message, args) => {
 //             msg.delete();
 //     });
     
-    fetch('https://apis.duncte123.me/meme')
+    fetch('https://apis.duncte123.me/meme', 
+        {
+            'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.152 Safari/537.36'
+        }
+     )
     .then(response => response.text())
     .then(data => {
         console.log(data)
