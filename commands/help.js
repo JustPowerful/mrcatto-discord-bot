@@ -26,26 +26,19 @@ module.exports.run = async (bot, message, args) => {
 
     if(!args[0]) {
         message.delete();
-        let bothelpmsg = "Commands sent in a private DM :smiley:"
         let Sembed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`${bot.user.username} Help`, message.guild.iconURL)
         .setThumbnail(bot.user.displayAvatarURL)
         .setTimestamp()
-        .setDescription(`These are the avaliable commands for ${bot.user.username}!\nBot prefix is: ${prefix}`)
-        .addField(`Commands:`, "``say`` ``clear`` ``meme`` ``help`` ``serverinfo`` ``botinfo`` ``kick`` ``ban`` ``report`` ``emoji``")
+        .setDescription(`These are the avaliable commands for ${bot.user.username}!\nBot prefix is: ${prefix}\nUse \`help <command>\` for more details.`)
+        .addField(`Commands:`, "``say`` ``clear`` ``meme`` ``help`` ``serverinfo`` ``botinfo`` ``kick`` ``ban`` ``report`` ``emoji`` ``music``")
         .setFooter("BETA V1.0.3", bot.user.displayAvatarURL)
         
         
-        message.channel.send(bothelpmsg);
+        message.channel.send(Sembed);
         // if the bot can't send the message to the user
         // that means that the user disable direct messages from server members
-        
-        message.member.send(Sembed).catch(err => {
-            if(err){
-                message.channel.send("[Error]: Please enable direct messages from server members .");
-            }
-        });
         
         
         

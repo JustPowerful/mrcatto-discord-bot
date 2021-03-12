@@ -17,6 +17,9 @@ setInterval(async function() {
 
 }, 10000);
 
+// MUSIC GLOBAL VARIABLES
+bot.musicUrls = [] // QUEUE
+bot.dispatcher = null // CURRENT PLAYING DISPATCHER
 
 
 const fs = require("fs");
@@ -60,20 +63,8 @@ bot.on("message", async message => {
     if(!message.content.startsWith(prefix)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length)) || bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)))
     if (commandfile) commandfile.run(bot, message, args)
-
-    
-
-// chat responding
-  
-    if(message.content === `no u`){
-      message.channel.send("https://images3.memedroid.com/images/UPLOADED731/5ab1fd5adac97.jpeg");
-    }
-  
-    if(message.content === `moi`){
-      message.channel.send("frrrenchhh :flag_fr: ");
-    }
     
     
 })
 
-bot.login("Nzc1MTA2OTE5ODAyMzM5Mzk4.X6hgkg.k-MrVut3KPJNSUSSxwPYXsKfPQU");
+bot.login("Nzc1MTA2OTE5ODAyMzM5Mzk4.X6hgkg.zv-93SRsQGPUiMITwfG-g1aSWW8");
