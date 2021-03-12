@@ -8,6 +8,9 @@
 - You can deploy it on heroku or other app cloud server providers (you can find the button if you scroll up)
 - If you want to test it on your own computer, you need to install ``node.js``
 
+### ENV VARIABLES:
+``BOT_TOKEN`` : for bot login token
+
 ### What does this bot do ?
 - Users can report toxic members
 - Admin tools : Ban, Kick with log channels

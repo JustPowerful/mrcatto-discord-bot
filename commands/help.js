@@ -39,11 +39,6 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send(Sembed);
         // if the bot can't send the message to the user
         // that means that the user disable direct messages from server members
-        
-        
-        
-            
-        
     }
 }
 
