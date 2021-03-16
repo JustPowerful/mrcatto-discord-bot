@@ -9,7 +9,7 @@ const fetchVideoInfo = require('youtube-infofix')
 
 const YouTube = require('youtube-node')
 const youtube = new YouTube()
-youtube.setKey("AIzaSyAX5VqOa6UYp_Ej5nMd6GA0wWtv2bh0mH8") // process.env.YOUTUBE_TOKEN
+youtube.setKey(process.env.YOUTUBE_TOKEN) // process.env.YOUTUBE_TOKEN
 
 const ytdl = require('ytdl-core');
 
