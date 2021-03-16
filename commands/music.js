@@ -121,7 +121,7 @@ async function playSong(bot, messageChannel, voiceConnection, voiceChannel) {
 module.exports.config = {
     name: "music", // you can you this as the original command
     aliases: ["m", "audio"], // or you can do it with multiple commands (try to type it with prefix)
-    usage: `\n${prefix}music play <youtube URL> \n ${prefix}music skip\n${prefix}music leave\n${prefix}music queue`,
+    usage: `\n${prefix}music play <youtube URL> \n ${prefix}music skip\n${prefix}music leave\n${prefix}music queuelist`,
     description: "Use this command to play audio in voice channel",
     accessableby: "Members"
 }
