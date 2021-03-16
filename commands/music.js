@@ -7,6 +7,10 @@ const fetchVideoInfo = require('youtube-infofix')
 // const yt = require('youtube.get-video-info')
 // const getyttitle = require('get-youtube-title')
 
+const YouTube = require('youtube-node')
+const youtube = new YouTube()
+youtube.setKey("AIzaSyAX5VqOa6UYp_Ej5nMd6GA0wWtv2bh0mH8") // process.env.YOUTUBE_TOKEN
+
 const ytdl = require('ytdl-core');
 
 const streamOptions = {
@@ -26,7 +30,6 @@ module.exports.run = async (bot, message, args) => {
         let url = args[1]
         if (ytdl.validateURL(url))
         {
-            console.log("Valid URL")
             var flag = bot.musicUrls.some(element => element === url);
             if (!flag) 
             {
@@ -42,7 +45,7 @@ module.exports.run = async (bot, message, args) => {
                     } else {
                         try 
                         {
-                            const voiceConnection = await voiceChannel.join()
+                            let voiceConnection = await voiceChannel.join()
                             await playSong(bot, message.channel, voiceConnection, voiceChannel)
                         } catch(ex)
                         {
@@ -53,7 +56,42 @@ module.exports.run = async (bot, message, args) => {
             }
         } else 
         {
-            message.channel.send("Youtube URL is not correct, please check the URL before playing any audio.")
+            let newArgs = [...args]
+            newArgs.shift() // removes the parameter from the search
+            let searchQuery = newArgs.join(" ")
+            console.log(searchQuery)
+            youtube.search(searchQuery, 1, async function(error, results) {
+                if (error) throw error
+                let videoId = results.items[0].id.videoId
+                let videoUrl = `http://www.youtube.com/watch?v=${videoId}`
+                var flag = bot.musicUrls.some(element => element === url);
+                if(!flag)
+                {
+                    bot.musicUrls.push(videoUrl)
+                    if(voiceChannel != null)
+                    {
+                        if(voiceChannel.connection)
+                        {
+                            const embed = new Discord.RichEmbed();
+                            embed.setAuthor(bot.user.username, bot.user.displayAvatarUrl);
+                            embed.setDescription("You've successfully added url to queue!");
+                            message.channel.send(embed)
+                        } else {
+                            try 
+                            {
+                                let voiceConnection = await voiceChannel.join()
+                                await playSong(bot, message.channel, voiceConnection, voiceChannel)
+                            } catch(ex)
+                            {
+                                console.log(ex)
+                            } 
+                        }
+                    }
+                }
+
+            })
+
+
         }
 
     }
