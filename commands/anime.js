@@ -28,8 +28,8 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
   name: "anime", // you can you this as the original command
-  aliases: [], // or you can do it with multiple commands (try to type it with prefix)
-  usage: `${prefix}waifu`,
-  description: "Find who's your waifu",
+  aliases: ["mal", "myanimelist", "searchanime"], // or you can do it with multiple commands (try to type it with prefix)
+  usage: `${prefix}anime <anime name>`,
+  description: "Searches for the given anime",
   accessableby: "Members",
 };

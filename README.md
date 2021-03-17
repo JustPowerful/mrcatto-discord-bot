@@ -10,6 +10,7 @@
 
 ### ENV VARIABLES:
 ``BOT_TOKEN`` : for bot login token
+``YOUTUBE_TOKEN`` : for youtube api token
 
 ### What does this bot do ?
 - Users can report toxic members
