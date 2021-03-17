@@ -13,6 +13,7 @@
     "ascii-table": "0.0.9",
     "discord.js": "^11.6.4",
     "discord.js-commando": "^0.12.2",
+    "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.7",
     "fs": "0.0.1-security",
     "get-youtube-id": "^1.0.1",

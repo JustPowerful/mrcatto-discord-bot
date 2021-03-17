@@ -2,6 +2,10 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const ms = require("ms");
 
+// DOTENV :: ENVIRONEMENT VARIABLES SETUP
+require('dotenv').config()
+
+
 const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("ready", async () => {
