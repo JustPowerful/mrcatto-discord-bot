@@ -10,16 +10,16 @@ const bot = new Discord.Client({disableEveryone: false});
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-bot.user.setStatus("") //online, idle, dnd, invisible
+
+  setInterval(async function() {
+
+    let status = [`${bot.guilds.size} Servers!`,`.help`, `JustPowerful my owner`, `my comrades`];
+    let chosen = status[Math.floor(Math.random() * status.length)];
+  
+    bot.user.setActivity(chosen, {type: "LISTENING"}); //PLAYING, STREAMING, LISTENING, WATCHING
+  
+  }, 10000);
 })
-setInterval(async function() {
-
-  let status = [`On ${bot.guilds.size} Server!`,`type .help`,`On ${bot.guilds.size} Server!`, `Type .meme ;)`, `On ${bot.guilds.size} Server!`, `Type .help`];
-  let chosen = status[Math.floor(Math.random() * status.length)];
-
-  bot.user.setActivity(chosen, {type: "STREAMING"}); //PLAYING, STREAMING, LISTENING, WATCHING
-
-}, 10000);
 
 // MUSIC GLOBAL VARIABLES
 bot.musicUrls = [] // QUEUE
