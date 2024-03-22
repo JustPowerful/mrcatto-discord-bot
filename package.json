@@ -9,7 +9,7 @@
   "author": "ned",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.4.0",
+    "@discordjs/opus": "^0.8.0",
     "ascii-table": "0.0.9",
     "discord.js": "^11.6.4",
     "discord.js-commando": "^0.12.2",
